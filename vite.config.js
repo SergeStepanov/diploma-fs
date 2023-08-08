@@ -7,7 +7,9 @@ export default defineConfig({
             input: [
                 "resources/css/normalize.css",
                 "resources/css/client/styles.css",
+                "resources/css/admin/styles.css",
                 "resources/js/app.js",
+                "resources/js/admin/accordeon.js",
             ],
             refresh: true,
         }),
