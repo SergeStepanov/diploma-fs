@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>@yield('title')</title>
-    
-    @vite(["resources/css/normalize.css"])
+    <title>@yield('title', 'ИдёмВКино')</title>
+
+    @vite(['resources/css/normalize.css'])
 
     @yield('style')
 
@@ -22,17 +22,19 @@
 <body>
     <header class="page-header">
         <h1 class="page-header__title">Идём<span>в</span>кино</h1>
-        {{-- <span class="page-header__subtitle">Администраторррская</span> --}}
+        @auth
+            <span class="page-header__subtitle">Администраторррская</span>
+        @endauth
     </header>
 
 
     @yield('content')
 
-    <footer style="text-align: center; border-top: 1px solid;">
+    {{-- <footer style="text-align: center; border-top: 1px solid;">
 
-        <h4 class="page-header__title">&copy Идём<span>в</span>кино {{ now()->format('Y') }}</h4>
+        <p class="page-header__title">&copy Идём<span>в</span>кино {{ now()->format('Y') }}</p>
 
-    </footer>
+    </footer> --}}
 
 </body>
 
