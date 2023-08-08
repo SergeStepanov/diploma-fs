@@ -20,12 +20,13 @@
 </head>
 
 <body>
-    <header class="page-header">
+    @yield('header')
+    {{-- <header class="page-header">
         <h1 class="page-header__title">Идём<span>в</span>кино</h1>
         @auth
             <span class="page-header__subtitle">Администраторррская</span>
         @endauth
-    </header>
+    </header> --}}
 
 
     @yield('content')
