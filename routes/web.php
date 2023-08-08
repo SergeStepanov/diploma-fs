@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home.index');
 })->name('home');
+
+// Route::get('login',[])->name('login.index');
+// Route::post('login' [])->name('login.store');
+
+// Route::get('register',[])->name('register.index');
+// Route::post('register' [])->name('register.store');
+
+// Route::get('loguot')->name('logout'); // ?????????
+
+// Route::middleware('auth')->group(function() {
+//     Route::get();
+// });
