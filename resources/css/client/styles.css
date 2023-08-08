@@ -361,7 +361,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background-image: url(../../img/client/border-top.png);
+  background-image: url(../../img/client/background.jpg);
   background-size: 10px 3px;
 }
 .ticket__info-wrapper::after {
