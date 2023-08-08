@@ -17,11 +17,20 @@ Route::get('/', function () {
     return view('home.index');
 })->name('home');
 
+Route::get('/admin', function () {
+    return view('admin.index');
+})->name('admin');
+
+Route::get('/admin/login', function () {
+    return view('admin.login');
+})->name('login');
+
+Route::get('/test', function () {
+    return view('client.ticket');
+})->name('test');
+
 // Route::get('login',[])->name('login.index');
 // Route::post('login' [])->name('login.store');
-
-// Route::get('register',[])->name('register.index');
-// Route::post('register' [])->name('register.store');
 
 // Route::get('loguot')->name('logout'); // ?????????
 
