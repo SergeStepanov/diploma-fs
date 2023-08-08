@@ -34,7 +34,7 @@
         <section class="movie">
             <div class="movie__info">
                 <div class="movie__poster">
-                    <img class="movie__poster-image" alt="Звёздные войны постер" src="img/client/poster1.jpg">
+                    <img class="movie__poster-image" alt="Звёздные войны постер" src="../../../img/client/poster1.png">
                 </div>
                 <div class="movie__description">
                     <h2 class="movie__title">Звёздные войны XXIII: Атака клонированных клонов</h2>
@@ -72,7 +72,7 @@
         <section class="movie">
             <div class="movie__info">
                 <div class="movie__poster">
-                    <img class="movie__poster-image" alt="Альфа постер" src="i/poster2.jpg">
+                    <img class="movie__poster-image" alt="Альфа постер" src="img/client/poster2.jpg">
                 </div>
                 <div class="movie__description">
                     <h2 class="movie__title">Альфа</h2>
