@@ -19,20 +19,28 @@ Route::get('/', function () {
 
 Route::get('/admin', function () {
     return view('admin.index');
-})->name('admin');
+})->name('admin')->middleware('auth');
 
 Route::get('/admin/login', function () {
     return view('admin.login');
 })->name('login');
 
-Route::get('/test', function () {
-    return view('client.ticket');
-})->name('test');
+Route::get('/admin/register', function () {
+    return view('admin.register');
+})->name('register');
 
-// Route::get('login',[])->name('login.index');
-// Route::post('login' [])->name('login.store');
+// Route::get('/test', function () {
+//     return view('admin.register');
+// })->name('test');
 
-// Route::get('loguot')->name('logout'); // ?????????
+// Route::get('login',[, 'index'])->name('login');
+// Route::post('login' [, 'store']);
+
+// // Route::get('loguot')->name('logout'); // ?????????
+
+// Route::get('register',[, 'index'])->name('register');
+// Route::post('register' [, 'store']);
+
 
 // Route::middleware('auth')->group(function() {
 //     Route::get();
