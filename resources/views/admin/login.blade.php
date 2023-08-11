@@ -17,12 +17,21 @@
                     @csrf
                     <label class="login__label" for="mail">
                         E-mail
-                        <input class="login__input" type="email" placeholder="example@domain.xyz" name="email" required>
+                        <input class="login__input" type="email" placeholder="example@domain.xyz" name="email"
+                            id="email" value="{{ old('email') }}" autofocus required>
                     </label>
+                    @error('email')
+                        <p style="font-size: 1.2rem; color: red">{{ $message }}</p>
+                    @enderror
+
                     <label class="login__label" for="pwd">
                         Пароль
-                        <input class="login__input" type="password" placeholder="" name="password" required>
+                        <input class="login__input" type="password" placeholder="" name="password" id="password" required>
                     </label>
+                    @error('password')
+                        <p style="font-size: 1.2rem; color: red">{{ $message }}</p>
+                    @enderror
+
                     <div class="text-center">
                         <input value="Авторизоваться" type="submit" class="login__button">
                     </div>
