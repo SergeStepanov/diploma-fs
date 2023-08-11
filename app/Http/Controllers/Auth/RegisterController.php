@@ -35,6 +35,6 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin');
     }
 }
