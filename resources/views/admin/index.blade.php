@@ -3,13 +3,27 @@
 @section('title', 'Администраторская')
 
 @section('style')
-    @vite(['resources/css/admin/styles.css', 'resources/js/admin/accordeon.js'])
+    @vite(['resources/css/admin/styles.css'])
+@endsection
+
+@section('script')
+    @vite(['resources/js/admin/accordeon.js'])
 @endsection
 
 @section('header')
-    <header class="page-header">
-        <h1 class="page-header__title">Идём<span>в</span>кино</h1>
-        <span class="page-header__subtitle">Администраторская</span>
+    <header class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h1 class="page-header__title">Идём<span>в</span>кино</h1>
+            <span class="page-header__subtitle">Администраторская</span>
+        </div>
+
+        <div> 
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button class="login__input">Выйти</button>
+            </form>
+            {{-- <a style="" class="conf-step__button conf-step__button-accent" href="{{ route('logout') }}">Выйти</a> --}}
+        </div>
     </header>
 @endsection
 

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,31 +19,21 @@ Route::get('/', function () {
     return view('home.index');
 })->name('home');
 
-Route::get('/admin', function () {
-    return view('admin.index');
-})->name('admin')->middleware('auth');
-
-Route::get('/admin/login', function () {
-    return view('admin.login');
-})->name('login');
-
-Route::get('/admin/register', function () {
-    return view('admin.register');
-})->name('register');
-
 // Route::get('/test', function () {
 //     return view('admin.register');
 // })->name('test');
 
-// Route::get('login',[, 'index'])->name('login');
-// Route::post('login' [, 'store']);
 
-// // Route::get('loguot')->name('logout'); // ?????????
+Route::get('/admin/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/admin/register', [RegisterController::class, 'store']);
 
-// Route::get('register',[, 'index'])->name('register');
-// Route::post('register' [, 'store']);
+Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
+Route::post('/admin/login', [LoginController::class, 'store']);
+Route::post('/loguot', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 
 
-// Route::middleware('auth')->group(function() {
-//     Route::get();
-// });
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', function () {
+        return view('admin.index');
+    })->name('admin');
+});
