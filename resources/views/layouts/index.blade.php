@@ -36,6 +36,7 @@
         <p class="page-header__title">&copy Идём<span>в</span>кино {{ now()->format('Y') }}</p>
 
     </footer> --}}
+    @yield('script')
 
 </body>
 
