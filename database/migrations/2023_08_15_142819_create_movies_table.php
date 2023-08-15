@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('title');
-            $table->integer('duration', 220)->nullable();
-            $table->string('description', 600)->nullable();
+            $table->integer('duration')->nullable();
+            $table->string('description')->nullable();
             $table->string('country', 40)->nullable();
             $table->string('poster')->default('poster');
 
