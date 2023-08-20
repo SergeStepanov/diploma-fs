@@ -9,5 +9,5 @@ class Session extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+    protected $timestamps = false;
 }
