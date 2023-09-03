@@ -2,8 +2,8 @@
 
 Использованы:
 
-* PHP ver. 
-* Laravel ver.
+* PHP ver. 8.2.3
+* Laravel ver. 10.14.1
 * Composer 
 * JS 
 * MySQL
