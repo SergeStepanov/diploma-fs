@@ -4,7 +4,7 @@
             <div class="popup__header">
                 <h2 class="popup__title">
                     Добавление фильма
-                    <a class="popup__dismiss" href="#"><img src="i/close.png" alt="Закрыть"></a>
+                    <a class="popup__dismiss" href="#"><img src="img/admin/close.png" alt="Закрыть"></a>
                 </h2>
 
             </div>
