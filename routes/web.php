@@ -23,15 +23,16 @@ Route::get('/', [HomePageController::class, 'index'])->name('home');
 // })->name('test');
 
 
-Route::get('/admin/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/admin/register', [RegisterController::class, 'store']);
+// Route::get('/admin/register', [RegisterController::class, 'index'])->name('register');
+// Route::post('/admin/register', [RegisterController::class, 'store']);
 
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
 Route::post('/admin/login', [LoginController::class, 'store']);
-Route::post('/loguot', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 
 
 Route::middleware('auth')->group(function () {
+    Route::post('/loguot', [LoginController::class, 'destroy'])->name('logout');
+
     Route::get('/admin', function () {
         return view('admin.index');
     })->name('admin');

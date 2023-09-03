@@ -39,7 +39,7 @@
         <section class="movie">
             <div class="movie__info">
                 <div class="movie__poster">
-                    <img class="movie__poster-image" alt="Звёздные войны постер" src="../../../img/client/poster1.png">
+                    <img class="movie__poster-image" alt="Звёздные войны постер" src="img/client/poster1.jpg">
                 </div>
                 <div class="movie__description">
                     <h2 class="movie__title">Звёздные войны XXIII: Атака клонированных клонов</h2>
@@ -114,7 +114,7 @@
         <section class="movie">
             <div class="movie__info">
                 <div class="movie__poster">
-                    <img class="movie__poster-image" alt="Хищник постер" src="i/poster2.jpg">
+                    <img class="movie__poster-image" alt="Хищник постер" src="img/client/poster2.jpg">
                 </div>
                 <div class="movie__description">
                     <h2 class="movie__title">Хищник</h2>
