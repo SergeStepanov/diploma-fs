@@ -17,7 +17,6 @@ class HallSeeder extends Seeder
             'name' => 'Зал 1',
             'rows' => 11,
             'cols' => 6,
-            'is_active' => true,
             'price_standard' => 300,
             'price_vip' => 400,
         ]);
@@ -26,7 +25,6 @@ class HallSeeder extends Seeder
             'name' => 'Зал 2',
             'rows' => 15,
             'cols' => 10,
-            'is_active' => true,
             'price_standard' => 350,
             'price_vip' => 450,
         ]);
@@ -35,7 +33,6 @@ class HallSeeder extends Seeder
             'name' => 'Зал 3',
             'rows' => 10,
             'cols' => 9,
-            'is_active' => true,
             'price_standard' => 500,
             'price_vip' => 700,
         ]);
