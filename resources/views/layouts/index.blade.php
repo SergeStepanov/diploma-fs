@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -21,21 +21,9 @@
 
 <body>
     @yield('header')
-    {{-- <header class="page-header">
-        <h1 class="page-header__title">Идём<span>в</span>кино</h1>
-        @auth
-            <span class="page-header__subtitle">Администраторррская</span>
-        @endauth
-    </header> --}}
-
 
     @yield('content')
 
-    {{-- <footer style="text-align: center; border-top: 1px solid;">
-
-        <p class="page-header__title">&copy Идём<span>в</span>кино {{ now()->format('Y') }}</p>
-
-    </footer> --}}
     @yield('script')
 
 </body>
