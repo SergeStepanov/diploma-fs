@@ -10,6 +10,7 @@ export default defineConfig({
                 "resources/css/admin/styles.css",
                 "resources/js/app.js",
                 "resources/js/admin/accordeon.js",
+                "resources/js/client/nav.js",
             ],
             refresh: true,
         }),

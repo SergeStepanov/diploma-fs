@@ -17,7 +17,7 @@
             <span class="page-header__subtitle">Администраторская</span>
         </div>
 
-        <div> 
+        <div>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button class="login__input">Выйти</button>
@@ -36,14 +36,16 @@
             <div class="conf-step__wrapper">
                 <p class="conf-step__paragraph">Доступные залы:</p>
                 <ul class="conf-step__list">
-                    <li>Зал 1
-                        <button class="conf-step__button conf-step__button-trash"></button>
-                    </li>
-                    <li>Зал 2
-                        <button class="conf-step__button conf-step__button-trash"></button>
-                    </li>
+
+                    @foreach ($halls as $hall)
+                        <li>
+                            {{ $hall->name }}
+                            <button class="conf-step__button conf-step__button-trash"></button>
+                        </li>
+                    @endforeach
+
                 </ul>
-                <button class="conf-step__button conf-step__button-accent">Создать зал</button>
+                <button class="conf-step__button conf-step__button-accent" id="add_hall">Создать зал</button>
             </div>
         </section>
 
@@ -53,12 +55,17 @@
             </header>
             <div class="conf-step__wrapper">
                 <p class="conf-step__paragraph">Выберите зал для конфигурации:</p>
+
                 <ul class="conf-step__selectors-box">
-                    <li><input type="radio" class="conf-step__radio" name="chairs-hall" value="Зал 1" checked><span
-                            class="conf-step__selector">Зал 1</span></li>
-                    <li><input type="radio" class="conf-step__radio" name="chairs-hall" value="Зал 2"><span
-                            class="conf-step__selector">Зал 2</span></li>
+
+                    @foreach ($halls as $hall)
+                        <li><input type="radio" class="conf-step__radio" name="chairs-hall"
+                                id="{{ $hall->id }} value="{{ $hall->name }}" checked><span
+                                class="conf-step__selector">{{ $hall->name }}</span></li>
+                    @endforeach
+
                 </ul>
+
                 <p class="conf-step__paragraph">Укажите количество рядов и максимальное количество кресел в ряду:</p>
                 <div class="conf-step__legend">
                     <label class="conf-step__label">Рядов, шт<input type="text" class="conf-step__input"
@@ -203,10 +210,13 @@
             <div class="conf-step__wrapper">
                 <p class="conf-step__paragraph">Выберите зал для конфигурации:</p>
                 <ul class="conf-step__selectors-box">
-                    <li><input type="radio" class="conf-step__radio" name="prices-hall" value="Зал 1"><span
-                            class="conf-step__selector">Зал 1</span></li>
-                    <li><input type="radio" class="conf-step__radio" name="prices-hall" value="Зал 2" checked><span
-                            class="conf-step__selector">Зал 2</span></li>
+
+                    @foreach ($halls as $hall)
+                        <li><input type="radio" class="conf-step__radio" name="prices-hall" id="{{ $hall->id }}"
+                                value="{{ $hall->name }}" checked><span
+                                class="conf-step__selector">{{ $hall->name }}</span></li>
+                    @endforeach
+
                 </ul>
 
                 <p class="conf-step__paragraph">Установите цены для типов кресел:</p>
@@ -236,36 +246,17 @@
                 <p class="conf-step__paragraph">
                     <button class="conf-step__button conf-step__button-accent">Добавить фильм</button>
                 </p>
+
                 <div class="conf-step__movies">
-                    <div class="conf-step__movie">
-                        <img class="conf-step__movie-poster" alt="poster" src="img/admin/poster.png">
-                        <h3 class="conf-step__movie-title">Звёздные войны XXIII: Атака клонированных клонов</h3>
-                        <p class="conf-step__movie-duration">130 минут</p>
-                    </div>
 
-                    <div class="conf-step__movie">
-                        <img class="conf-step__movie-poster" alt="poster" src="img/admin//poster.png">
-                        <h3 class="conf-step__movie-title">Миссия выполнима</h3>
-                        <p class="conf-step__movie-duration">120 минут</p>
-                    </div>
+                    @foreach ($movies as $movie)
+                        <div class="conf-step__movie" id="{{ $movie->id }}">
+                            <img class="conf-step__movie-poster" alt="{{ $movie->poster }}" src="img/admin/poster.png">
+                            <h3 class="conf-step__movie-title">{{ $movie->title }}</h3>
+                            <p class="conf-step__movie-duration">{{ $movie->duration }} минут</p>
+                        </div>
+                    @endforeach
 
-                    <div class="conf-step__movie">
-                        <img class="conf-step__movie-poster" alt="poster" src="img/admin//poster.png">
-                        <h3 class="conf-step__movie-title">Серая пантера</h3>
-                        <p class="conf-step__movie-duration">90 минут</p>
-                    </div>
-
-                    <div class="conf-step__movie">
-                        <img class="conf-step__movie-poster" alt="poster" src="img/admin//poster.png">
-                        <h3 class="conf-step__movie-title">Движение вбок</h3>
-                        <p class="conf-step__movie-duration">95 минут</p>
-                    </div>
-
-                    <div class="conf-step__movie">
-                        <img class="conf-step__movie-poster" alt="poster" src="img/admin//poster.png">
-                        <h3 class="conf-step__movie-title">Кот Да Винчи</h3>
-                        <p class="conf-step__movie-duration">100 минут</p>
-                    </div>
                 </div>
 
                 <div class="conf-step__seances">
