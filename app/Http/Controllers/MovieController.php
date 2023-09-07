@@ -12,7 +12,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        return Movie::all();
     }
 
     /**
@@ -20,7 +20,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.popups.add_hall');
     }
 
     /**
