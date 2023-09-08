@@ -10,6 +10,7 @@
             </div>
             <div class="popup__wrapper">
                 <form action="add_movie" method="post" accept-charset="utf-8">
+                    @csrf
                     <label class="conf-step__label conf-step__label-fullsize" for="hall">
                         Название зала
                         <select class="conf-step__input" name="hall" required>

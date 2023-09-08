@@ -10,6 +10,7 @@
             </div>
             <div class="popup__wrapper">
                 <form action="delete_hall" method="post" accept-charset="utf-8">
+                    @csrf
                     <p class="conf-step__paragraph">Вы действительно хотите удалить зал <span></span>?</p>
                     <!-- В span будет подставляться название зала -->
                     <div class="conf-step__buttons text-center">
