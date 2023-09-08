@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->integer('rows')->default(10); // к-во рядов
-            $table->integer('cols')->default(8); // к-во кресел в ряду
+            $table->unsignedInteger('rows')->default(10); // к-во рядов
+            $table->unsignedInteger('cols')->default(8); // к-во кресел в ряду
             
             $table->boolean('is_active')->default(false);
 

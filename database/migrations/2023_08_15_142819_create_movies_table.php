@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
 
             $table->string('title');
-            $table->integer('duration')->nullable();
-            $table->string('description')->nullable();
+            $table->unsignedInteger('duration')->nullable();
+            $table->text('description')->nullable();
             $table->string('country', 40)->nullable();
-            $table->string('poster')->default('poster');
+            $table->string('poster')->nullable();
 
             $table->timestamps();
         });
