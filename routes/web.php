@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomePageController::class, 'index'])->name('home');
 
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
-Route::post('/admin/login', [LoginController::class, 'store']);
+Route::post('/admin/login', [LoginController::class, 'login']);
 
 Route::middleware('auth')->group(function () {
-    Route::post('/loguot', [LoginController::class, 'destroy'])->name('logout');
+    Route::post('/loguot', [LoginController::class, 'loguot'])->name('logout');
 
     Route::get('/admin', [AdminPageController::class, 'index'])->name('admin');
 });
