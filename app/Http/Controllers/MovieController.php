@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MovieRequest;
 use App\Models\Movie;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class MovieController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): string
     {
         return Movie::all();
     }
@@ -19,7 +19,7 @@ class MovieController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         return view('admin.popups.add_hall');
     }
@@ -27,7 +27,7 @@ class MovieController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(MovieRequest $request)
+    public function store(MovieRequest $request): Movie
     {
         return Movie::create($request->validated());
 

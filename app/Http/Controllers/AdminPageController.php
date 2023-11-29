@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hall;
 use App\Models\Movie;
+use App\Models\Session;
 use Illuminate\Http\Request;
 
 class AdminPageController extends Controller
@@ -15,7 +16,9 @@ class AdminPageController extends Controller
     {
         $movies = Movie::all();
         $halls = Hall::all();
-
+        // $sessions = Session::all();
+        // dd($movies);
+        
         return view('admin.index', [
             'movies' => $movies,
             'halls' => $halls,

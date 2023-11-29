@@ -11,23 +11,15 @@ class HallController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): string
     {
         return Hall::all();
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
-    public function store(HallRequest $request)
+    public function store(HallRequest $request): bool
     {
         return Hall::create($request->validated());
     }
@@ -35,32 +27,28 @@ class HallController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Hall $hall)
+    public function show(string $id): Request
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Hall $hall)
-    {
-        //
+        return Hall::findOfFail($id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(HallRequest $request, Hall $hall)
+    public function update(HallRequest $request, Hall $hall): bool
     {
-        //
+        $hall->fill($request->validated());
+        return $hall->save();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Hall $hall)
+    public function destroy(Hall $hall): null
     {
-        //
+        if ($hall->delete()) {
+            return response(null, 204);
+        }
+        return null;
     }
 }

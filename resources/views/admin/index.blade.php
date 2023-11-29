@@ -29,6 +29,7 @@
 
 @section('content')
     <main class="conf-steps">
+
         <section class="conf-step">
             <header class="conf-step__header conf-step__header_opened">
                 <h2 class="conf-step__title">Управление залами</h2>
@@ -38,14 +39,16 @@
                 <ul class="conf-step__list">
 
                     @foreach ($halls as $hall)
-                        <li>
+                        <li data-id="{{ $hall->id }}">
                             {{ $hall->name }}
                             <button class="conf-step__button conf-step__button-trash"></button>
                         </li>
                     @endforeach
 
                 </ul>
+
                 <button class="conf-step__button conf-step__button-accent" id="add_hall">Создать зал</button>
+
             </div>
         </section>
 
@@ -59,8 +62,8 @@
                 <ul class="conf-step__selectors-box">
 
                     @foreach ($halls as $hall)
-                        <li><input type="radio" class="conf-step__radio" name="chairs-hall"
-                                id="{{ $hall->id }} value="{{ $hall->name }}" checked><span
+                        <li><input type="radio" class="conf-step__radio" name="chairs-hall" id="{{ $hall->id }}"
+                                value="{{ $hall->name }}" {{ $loop->first ? 'checked' : '' }}><span
                                 class="conf-step__selector">{{ $hall->name }}</span></li>
                     @endforeach
 
@@ -69,11 +72,12 @@
                 <p class="conf-step__paragraph">Укажите количество рядов и максимальное количество кресел в ряду:</p>
                 <div class="conf-step__legend">
                     <label class="conf-step__label">Рядов, шт<input type="text" class="conf-step__input"
-                            placeholder="10"></label>
+                            value="{{ $hall->rows }}" placeholder="10"></label>
                     <span class="multiplier">x</span>
                     <label class="conf-step__label">Мест, шт<input type="text" class="conf-step__input"
-                            placeholder="8"></label>
+                            value="{{ $hall->cols }}" placeholder="8"></label>
                 </div>
+
                 <p class="conf-step__paragraph">Теперь вы можете указать типы кресел на схеме зала:</p>
                 <div class="conf-step__legend">
                     <span class="conf-step__chair conf-step__chair_standart"></span> — обычные кресла
@@ -107,14 +111,14 @@
                         </div>
 
                         <div class="conf-step__row">
-                            <span class="conf-step__chair conf-step__chair_disabled"></span><span
-                                class="conf-step__chair conf-step__chair_standart"></span>
-                            <span class="conf-step__chair conf-step__chair_standart"></span><span
-                                class="conf-step__chair conf-step__chair_standart"></span>
-                            <span class="conf-step__chair conf-step__chair_standart"></span><span
-                                class="conf-step__chair conf-step__chair_standart"></span>
-                            <span class="conf-step__chair conf-step__chair_standart"></span><span
-                                class="conf-step__chair conf-step__chair_disabled"></span>
+                            <span class="conf-step__chair conf-step__chair_disabled"></span>
+                            <span class="conf-step__chair conf-step__chair_standart"></span>
+                            <span class="conf-step__chair conf-step__chair_standart"></span>
+                            <span class="conf-step__chair conf-step__chair_standart"></span>
+                            <span class="conf-step__chair conf-step__chair_standart"></span>
+                            <span class="conf-step__chair conf-step__chair_standart"></span>
+                            <span class="conf-step__chair conf-step__chair_standart"></span>
+                            <span class="conf-step__chair conf-step__chair_disabled"></span>
                         </div>
 
                         <div class="conf-step__row">
@@ -203,7 +207,7 @@
             </div>
         </section>
 
-        <section class="conf-step">
+        <section class="conf-step"> {{-- Конфигурация цен --}}
             <header class="conf-step__header conf-step__header_opened">
                 <h2 class="conf-step__title">Конфигурация цен</h2>
             </header>
@@ -213,7 +217,7 @@
 
                     @foreach ($halls as $hall)
                         <li><input type="radio" class="conf-step__radio" name="prices-hall" id="{{ $hall->id }}"
-                                value="{{ $hall->name }}" checked><span
+                                value="{{ $hall->name }}" {{ $loop->first ? 'checked' : '' }}><span
                                 class="conf-step__selector">{{ $hall->name }}</span></li>
                     @endforeach
 
@@ -315,7 +319,13 @@
                 <button class="conf-step__button conf-step__button-accent">Открыть продажу билетов</button>
             </div>
         </section>
+
     </main>
 
-
 @endsection
+
+@include('admin.popups.add_movie')
+@include('admin.popups.add_hall')
+@include('admin.popups.add_session')
+@include('admin.popups.delete_hall')
+@include('admin.popups.delete_session')
