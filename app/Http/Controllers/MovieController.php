@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MovieRequest;
 use App\Models\Movie;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class MovieController extends Controller
@@ -36,32 +37,29 @@ class MovieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Movie $movie)
+    public function show(string $id): Request
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Movie $movie)
-    {
-        //
+        return Movie::findOfFail($id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(MovieRequest $request, Movie $movie)
+    public function update(MovieRequest $request, Movie $movie): bool
     {
-        //
+        $movie->fill($request->validated());
+        return $movie->save();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Movie $movie)
+    public function destroy(Movie $movie): null
     {
-        //
+        if ($movie->delete()) {
+            response(null, 204);
+        }
+
+        return null;
     }
 }
