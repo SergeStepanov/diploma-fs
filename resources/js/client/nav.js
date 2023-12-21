@@ -1,7 +1,9 @@
 const days = Array.from(document.querySelectorAll(".page-nav__day"));
 
-days[0].classList.add("page-nav__day_today");
-days[0].classList.add("page-nav__day_chosen");
+if (days.length) {
+    days[0].classList.add("page-nav__day_today");
+    days[0].classList.add("page-nav__day_chosen");
+}
 
 // Выходные дни
 days.forEach((element) => {
