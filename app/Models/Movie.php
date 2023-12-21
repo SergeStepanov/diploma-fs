@@ -24,6 +24,6 @@ class Movie extends Model
 
     public function sessions(): HasMany 
     {
-        return $this->hasMany(Seesion::class, 'movie_id');
+        return $this->hasMany(Session::class, 'movie_id');
     }
 }
