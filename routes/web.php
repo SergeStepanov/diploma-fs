@@ -3,7 +3,9 @@
 use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HallController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/loguot', [LoginController::class, 'loguot'])->name('logout');
 
     Route::get('/admin', [AdminPageController::class, 'index'])->name('admin');
+
+    // Route::post('/admin', [MovieController::class, 'store'])->name('movie.add');
+    // Route::post('/admin', [HallController::class, 'store'])->name('hall.add');
 });

@@ -9,7 +9,7 @@
 
             </div>
             <div class="popup__wrapper">
-                <form action="add_hall" method="post" accept-charset="utf-8">
+                <form action="" method="POST" accept-charset="utf-8">
                     @csrf
                     <label class="conf-step__label conf-step__label-fullsize" for="name">
                         Название зала

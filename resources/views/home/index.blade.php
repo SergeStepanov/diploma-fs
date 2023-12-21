@@ -4,11 +4,6 @@
     @vite(['resources/css/client/styles.css'])
 @endsection
 
-@section('script')
-    @vite(['resources/js/client/nav.js'])
-@endsection
-
-
 @section('header')
     <header class="page-header">
         <h1 class="page-header__title">Идём<span>в</span>кино</h1>

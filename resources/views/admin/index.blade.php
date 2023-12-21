@@ -6,10 +6,6 @@
     @vite(['resources/css/admin/styles.css'])
 @endsection
 
-@section('script')
-    @vite(['resources/js/admin/accordeon.js'])
-@endsection
-
 @section('header')
     <header class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
         <div>
@@ -324,8 +320,8 @@
 
 @endsection
 
-@include('admin.popups.add_movie')
-@include('admin.popups.add_hall')
-@include('admin.popups.add_session')
-@include('admin.popups.delete_hall')
-@include('admin.popups.delete_session')
+{{-- @include('admin.popups.add_movie') --}}
+{{-- @include('admin.popups.add_hall') --}}
+{{-- @include('admin.popups.add_session') --}}
+{{-- @include('admin.popups.delete_hall') --}}
+{{-- @include('admin.popups.delete_session') --}}
