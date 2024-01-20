@@ -19,9 +19,11 @@ class HallController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(HallRequest $request): bool
+    public function store(HallRequest $request)
     {
-        return Hall::create($request->validated());
+        Hall::create($request->validated());
+
+        return redirect()->route('admin');
     }
 
     /**

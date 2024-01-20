@@ -31,4 +31,5 @@ Route::middleware('auth')->group(function () {
 
     // Route::post('/admin', [MovieController::class, 'store'])->name('movie.add');
     // Route::post('/admin', [HallController::class, 'store'])->name('hall.add');
+    Route::resource('hall', HallController::class);
 });

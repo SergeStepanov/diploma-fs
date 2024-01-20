@@ -321,7 +321,7 @@
 @endsection
 
 {{-- @include('admin.popups.add_movie') --}}
-{{-- @include('admin.popups.add_hall') --}}
+@include('admin.popups.add_hall')
 {{-- @include('admin.popups.add_session') --}}
 {{-- @include('admin.popups.delete_hall') --}}
 {{-- @include('admin.popups.delete_session') --}}
